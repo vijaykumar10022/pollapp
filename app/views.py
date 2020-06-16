@@ -9,7 +9,7 @@ def poll_q(req):
 		data=POLL(question=que)
 		data.save()
 		sp=Spoll.objects.all().delete()
-		return HttpResponse("Done")
+		return redirect('/result')
 	return render(req,'app/poll_q.html',{})
 def answer(req):
 	if req.method =="POST":
