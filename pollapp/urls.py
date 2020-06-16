@@ -22,5 +22,5 @@ urlpatterns = [
     path('poll_q/',views.poll_q,name="poll_q"),
     path('',views.answer,name="answer"),
     path('submit/',views.submit,name='submit'),
-    path('admin-page/',views.result,name='resutl'),
+    path('admin_page/',views.admin_page,name='admin_page'),
 ]

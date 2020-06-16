@@ -9,7 +9,7 @@ def poll_q(req):
 		data=POLL(question=que)
 		data.save()
 		sp=Spoll.objects.all().delete()
-		return redirect('/result')
+		return redirect('/admin_page')
 	return render(req,'app/poll_q.html',{})
 def answer(req):
 	if req.method =="POST":
@@ -21,12 +21,12 @@ def submit(req):
 	if req.method=="POST":
 		data=Myform(req.POST)
 		data.save()
-		return HttpResponse("Done")
+		return HttpResponse("<h1>Done</h1>")
 	form=Myform()
 	data=POLL.objects.last()
 	# data={'data':data.question}
 	return render(req,'app/submit.html',{'form':form,'data':data.question})
-def result(req):
+def admin_page(req):
 	data=Spoll.objects.all()
 	y=0
 	n=0
