@@ -20,7 +20,7 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('poll_q/',views.poll_q,name="poll_q"),
-    path('answer/',views.answer,name="answer"),
+    path('',views.answer,name="answer"),
     path('submit/',views.submit,name='submit'),
-    path('result/',views.result,name='resutl'),
+    path('admin-page/',views.result,name='resutl'),
 ]
